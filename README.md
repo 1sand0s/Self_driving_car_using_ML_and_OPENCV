@@ -10,6 +10,6 @@ TI-OMAP
 
 Description: 
 -----------------------------------
-The project focuses on utilizing the aaccessories of the TI-OMAP along with few peripherals like
+The project focuses on utilizing the accessories of the TI-OMAP along with few peripherals like
 Camera,Stepper motor etc to implement a self-driving car based on Machine Learning achieved through 
 either Neural Networks ,Genetic Algorithms or Logistic Regression.
