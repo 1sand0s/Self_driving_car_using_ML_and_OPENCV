@@ -3,8 +3,10 @@ Project Participants : Rakshith Vishwanatha , Pavan Gurudath and Aditya T
 
 The following project serves as the basis for our WIPRO summer internship.
 
-Processor: TI-OMAP 
+Processor: 
 -----------------------------------
+TI-OMAP 
+
 
 Description: 
 -----------------------------------
