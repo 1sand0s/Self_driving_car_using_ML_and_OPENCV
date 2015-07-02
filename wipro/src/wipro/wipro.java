@@ -1,4 +1,4 @@
-package wipro;
+
 
 import java.awt.image.*;
 
@@ -14,7 +14,7 @@ public class wipro
 	wipro()throws IOException
 	{
 		int[] pix;
-		File f=new File("C:/Users/Computer/Desktop/test.jpg");
+		File f=new File("C:/Users/Computer/Desktop/test.jpg");// Insert Image path inside the quotes
 		BufferedImage i=ImageIO.read(f);
 		WritableRaster r=i.getRaster();
 		pix=new int[r.getHeight()*r.getWidth()];
