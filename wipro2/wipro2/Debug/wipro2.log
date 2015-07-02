@@ -1,0 +1,14 @@
+﻿  wipro2.cpp
+d:\opencv123\opencv\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+d:\opencv123\opencv\build\include\opencv2\legacy\blobtrack.hpp(187): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+d:\opencv123\opencv\build\include\opencv2\legacy\blobtrack.hpp(256): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files\microsoft visual studio 10.0\vc\include\string.h(110) : see declaration of 'strcat'
+c:\users\computer\documents\visual studio 2010\projects\wipro2\wipro2\wipro2.cpp(29): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+          c:\program files\microsoft visual studio 10.0\vc\include\conio.h(128) : see declaration of 'getch'
+c:\users\computer\documents\visual studio 2010\projects\wipro2\wipro2\wipro2.cpp(39): warning C4101: 'pxy' : unreferenced local variable
+c:\users\computer\documents\visual studio 2010\projects\wipro2\wipro2\wipro2.cpp(37): warning C4101: 'q' : unreferenced local variable
+c:\users\computer\documents\visual studio 2010\projects\wipro2\wipro2\wipro2.cpp(13): warning C4101: 'buf' : unreferenced local variable
+wipro2.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+  wipro2.vcxproj -> C:\Users\Computer\documents\visual studio 2010\Projects\wipro2\Debug\wipro2.exe
