@@ -50,7 +50,11 @@ void main(char* arg,int arnc[])
 		  printf("Saving");
 		  cvResize(p2,p3);
 		  sprintf(buf,"C:/ml_pgms/wipro_ml/trainingSet/test%d.jpg",i++);
+		  cvSaveImage(buf,p3);
+		  p3=cvLoadImage(buf);
 		  Mat mat(p3);
+		  cvReleaseImage(&p3);
+		  p3=cvCreateImage(cvSize(20,20),IPL_DEPTH_8U,1);
 		  for(int i=0;i<mat.rows;i++)
 		  {
 			  for(int j=0;j<mat.cols;j++)
@@ -66,7 +70,7 @@ void main(char* arg,int arnc[])
 			  }
 			  printf("\n");
 		  }
-		 cvSaveImage(buf,p3);
+		 
 		  
 	  }
 	}
