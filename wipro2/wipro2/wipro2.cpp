@@ -17,7 +17,7 @@ void main(char* arg,int arnc[])
 	cvCreateTrackbar("HL","CAM_VIEW_WIPRO",&HL,179);
 	cvCreateTrackbar("SL","CAM_VIEW_WIPRO",&SL,255);
 	cvCreateTrackbar("VL","CAM_VIEW_WIPRO",&VL,255);
-    CvCapture* c;
+ 	CvCapture* c;
 	IplImage* p;
 	IplImage* p1;
 	cvNamedWindow("CAM_VIEW_WIPRO",CV_WINDOW_AUTOSIZE);
@@ -28,27 +28,19 @@ void main(char* arg,int arnc[])
 		printf("NO RECORDING DEVICES PRESENT");
 		getch();
 	}
-    p=cvQueryFrame(c);
+    	p=cvQueryFrame(c);
 	p1=cvCreateImage(CvSize(cvGetSize(p)),IPL_DEPTH_8U,3);
 	IplImage* p2;
 	p2=cvCreateImage(CvSize(cvGetSize(p)),IPL_DEPTH_8U,1);
 	IplImage* p3;
 	p3=cvCreateImage(cvSize(20,20),IPL_DEPTH_8U,1);
-	CvSeq* q;
-	CvSeq* contours=0;
-	float* pxy;
-	CvMemStorage* sto;
-	CvMemStorage* sto1;
-    while(1)
+    	while(1)
 	{
 	  p1=cvQueryFrame(c);
 	  cvShowImage("CAM_VIEW_WIPRO",p1);
 	  cvSmooth(p,p,CV_GAUSSIAN,9,9);
-      cvCvtColor(p,p1,CV_BGR2HSV);
-	  sto=cvCreateMemStorage(0);
-	  sto1=cvCreateMemStorage(0);
+      	  cvCvtColor(p,p1,CV_BGR2HSV);
 	  cvInRangeS(p1,cvScalar(83,65,0),cvScalar(138,255,187),p2);
-	  
 	  cvShowImage("TRAIN_IMAGE_WIPRO",p2);
 	  char ch=cvWaitKey(30);
 	  if(ch==27)
@@ -58,7 +50,23 @@ void main(char* arg,int arnc[])
 		  printf("Saving");
 		  cvResize(p2,p3);
 		  sprintf(buf,"C:/ml_pgms/wipro_ml/trainingSet/test%d.jpg",i++);
-		  cvSaveImage(buf,p3);
+		  Mat mat(p3);
+		  for(int i=0;i<mat.rows;i++)
+		  {
+			  for(int j=0;j<mat.cols;j++)
+			  {
+				  if(mat.at<cv::Vec3b>(i,j)==cv::Vec3b(255,255,255))
+				  {
+					  printf("1 ");
+				  }
+				  else if(mat.at<cv::Vec3b>(i,j)==cv::Vec3b(0,0,0))
+				  {
+					  printf("0 ");
+				  }
+			  }
+			  printf("\n");
+		  }
+		 cvSaveImage(buf,p3);
 		  
 	  }
 	}
