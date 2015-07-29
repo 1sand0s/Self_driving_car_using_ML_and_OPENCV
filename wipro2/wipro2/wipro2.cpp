@@ -28,6 +28,7 @@ void main(char* arg,int arnc[])
 		printf("NO RECORDING DEVICES PRESENT");
 		getch();
 	}
+	// Rak changes
     	p=cvQueryFrame(c);
 	p1=cvCreateImage(CvSize(cvGetSize(p)),IPL_DEPTH_8U,3);
 	IplImage* p2;
