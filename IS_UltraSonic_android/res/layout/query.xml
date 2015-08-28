@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/hexback">
+
+
+      
+ <ScrollView 
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+   >
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical" >
+
+        <TextView 
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ENQUIRY PAGE"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:layout_marginLeft="60dip"/>
+         <EditText
+             android:id="@+id/edit1"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_below="@+id/text2"
+             android:layout_marginTop="30dip"
+             android:textSize="10sp"
+             android:text="PRODUCT NAME"
+             />
+          <EditText
+             android:id="@+id/edit2"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_below="@+id/edit1"
+             android:layout_marginTop="30dip"
+             android:textSize="10sp"
+             android:text="Email-Id"
+             />
+
+          <EditText
+              android:id="@+id/editText1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/edit2"
+              android:layout_marginTop="30dp"
+              android:ems="10"
+              android:inputType="textMultiLine" 
+              android:text="Enter Query In not more than 100 words"
+              android:textSize="10sp"
+              >
+
+              <requestFocus />
+          </EditText>
+          <Button
+            android:id="@+id/button2"
+            style="@style/cusbut"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_below="@+id/editText1"
+            android:background="@drawable/cusbut"
+            android:clickable="true"
+            android:text="Send"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="140dip"
+            android:layout_marginTop="70dip"
+            android:textColor="#ff000000"
+            android:textSize="10dip"
+            android:textStyle="normal" />
+           <TextView
+            android:id="@+id/textView30"
+            android:layout_width="200sp"
+            android:layout_height="15sp"
+            android:layout_marginTop="100dip"
+            android:layout_marginLeft="150dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="copyrights @ RPA"
+            android:textColor="#ffa9a9a9"
+            android:textSize="6sp" />
+          </LinearLayout>
+</ScrollView>
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/navi" >
+    
+    <ImageView
+        android:id="@+id/compass"
+        android:layout_width="200dip"
+        android:layout_height="200dip"
+        android:background="@drawable/compass"
+        android:layout_marginLeft="50dip"
+        android:layout_marginTop="50dip"        
+        />
+    <Button
+            android:id="@+id/exit"
+            style="@style/cusbut"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:background="@drawable/cusbut"
+            android:clickable="true"
+            android:text="Exit"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dip"
+            android:layout_marginLeft="25dip"
+            android:textColor="#ff000000"
+            android:textSize="10dip"
+            android:textStyle="normal" />
+    <ImageButton 
+        
+        	android:id="@+id/light"
+        	android:background="@drawable/bright4"
+        	android:layout_width="40dip"
+        	android:layout_height="40dip"
+        	android:layout_toRightOf="@+id/exit"
+        	android:layout_alignParentBottom="true"
+        	android:layout_marginBottom="25dip"
+        	android:layout_marginLeft="150dip"/>
+    
+
+</RelativeLayout>
