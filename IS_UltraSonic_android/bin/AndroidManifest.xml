@@ -41,6 +41,21 @@
             android:label="Control"
             android:screenOrientation="portrait">
          </activity>
+           <activity
+            android:name="com.example.is_ultrasonic_android.Car"
+            android:label="Car"
+            android:screenOrientation="portrait">
+         </activity>
+         <activity
+            android:name="com.example.is_ultrasonic_android.Camera"
+            android:label="Camera"
+            android:screenOrientation="portrait">
+         </activity>
+         <activity
+            android:name="com.example.is_ultrasonic_android.Path"
+            android:label="Path"
+            android:screenOrientation="portrait">
+         </activity>
     </application>
 
 </manifest>

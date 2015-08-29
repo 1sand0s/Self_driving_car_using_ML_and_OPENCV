@@ -15,33 +15,27 @@ public class Car extends ActionBarActivity{
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       //setContentView(R.layout.activity_car);
+       setContentView(R.layout.activity_car);
 
-      /* Button Home=(Button) findViewById(R.id.button6);
+      Button Home=(Button) findViewById(R.id.button6);
         Home.setOnClickListener(new View.OnClickListener() {
-            @Override
+        
             public void onClick(View v) {
-                startActivity(new Intent(Cutting.this, MainActivity.class));
+                startActivity(new Intent(Car.this, INTRO.class));
             }
         });
 
 
         Button Products=(Button) findViewById(R.id.button7);
         Products.setOnClickListener(new View.OnClickListener() {
-            @Override
+            
             public void onClick(View v) {
-                startActivity(new Intent(Cutting.this, com.example.sat.products.class));
+                startActivity(new Intent(Car.this, Product.class));
             }
         });
 
-        Button Contacts=(Button) findViewById(R.id.button8);
-        Contacts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Cutting.this, Contact1.class));
-            }
-        });
-*/
+       
+
     }
 
 

@@ -1,9 +1,15 @@
 package com.example.is_ultrasonic_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Product extends ActionBarActivity {
 
@@ -15,87 +21,49 @@ public class Product extends ActionBarActivity {
        setContentView(R.layout.activity_product);
       /*TextView textw=(TextView)findViewById(R.id.textView26);
        Typeface f=Typeface.createFromAsset(getAssets(),"fonts/TRON.TTF");
-       textw.setTypeface(f);
+       textw.setTypeface(f);*/
        TextView text1=(TextView)findViewById(R.id.text1);
-       TextView text2=(TextView)findViewById(R.id.text2);
+      TextView text2=(TextView)findViewById(R.id.text2);
        TextView text3=(TextView)findViewById(R.id.text3);
-       TextView text4=(TextView)findViewById(R.id.text4);
+       /*TextView text4=(TextView)findViewById(R.id.text4);
        TextView text5=(TextView)findViewById(R.id.text5);
        TextView text6=(TextView)findViewById(R.id.text6);
-       final ImageView view1=(ImageView)findViewById(R.id.Image1);
-       text1.setOnClickListener(new OnClickListener()
-       {
-
-		@Override
-		public void onClick(View v) 
-		{
-			ImageView imag =view1;
-			assert(R.id.image1==imag.getId());
-			imag.setImageResource(R.drawable.i1);
-			imag.setTag(R.drawable.i1);
-		
-		}
-    	   
-       });
+       final ImageView view1=(ImageView)findViewById(R.id.Image1);*/
+    
        text1.setOnLongClickListener(new OnLongClickListener()
        {
 
-		@Override
+
 		public boolean onLongClick(View v) {
-		    startActivity(new Intent(products.this,High.class));
+		    startActivity(new Intent(Product.this,Car.class));
 			return false;
 			
 		}
-    	   
-       });
-       text2.setOnClickListener(new OnClickListener()
-       {
 
-		@Override
-		public void onClick(View v) 
-		{
-			ImageView imag=view1;
-			assert(R.id.image1==imag.getId());
-			imag.setImageResource(R.drawable.i2);
-			imag.setTag(R.drawable.i2);
-		}
+		
     	   
        });
+      
        text2.setOnLongClickListener(new OnLongClickListener()
        {
 
-		@Override
 		public boolean onLongClick(View v) {
-		    startActivity(new Intent(products.this,Terminal.class));
+		    startActivity(new Intent(Product.this,Camera.class));
 			return false;
 			
-		}
-    	   
-       });
-       text3.setOnClickListener(new OnClickListener()
-       {
-
-		@Override
-		public void onClick(View v) 
-		{
-			ImageView imag=view1;
-			assert(R.id.image1==imag.getId());
-			imag.setImageResource(R.drawable.i5);
-			imag.setTag(R.drawable.i5);
 		}
     	   
        });
        text3.setOnLongClickListener(new OnLongClickListener()
        {
 
-		@Override
 		public boolean onLongClick(View v) {
-		    startActivity(new Intent(products.this,Curing.class));
+		    startActivity(new Intent(Product.this,Path.class));
 			return false;
 			
 		}
     	   
-       });
+       });/*
        text4.setOnClickListener(new OnClickListener()
        {
 

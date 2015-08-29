@@ -35,8 +35,8 @@ import android.widget.TextView;
   public class Control extends ActionBarActivity implements SensorEventListener
   {
       
-      static String PORT,IP;
-      static Object g,h,tex,tex1,but,but2,sen1,s1;
+      static String PORT,IP,dir="";
+      static Object g,h,tex,tex1,but,but2,but3,but4,but5,sen1,s1;
       int x,y,z;
       float curangle=0f;
       SensorManager sen;
@@ -51,6 +51,9 @@ import android.widget.TextView;
           s=sen.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
           compass=(ImageView)findViewById(R.id.compass);
           Button exit = (Button) findViewById(R.id.exit);
+          Button auto=(Button)findViewById(R.id.auto);
+          Button man=(Button)findViewById(R.id.man);
+          Button test=(Button)findViewById(R.id.test);
           ImageButton light=(ImageButton)findViewById(R.id.light);
           Intent i = getIntent();
         
@@ -60,10 +63,13 @@ import android.widget.TextView;
           h=new String(PORT);
           but=exit;
           but2=light;
+          but3=auto;
+          but4=man;
+          but5=test;
           sen1=sen;
           s1=s;
           Log.e("Second Screen", g + " " + h);
-          Object y[]={g,h,but,but2,sen1,s1};
+          Object y[]={g,h,but,but3,but4,but5,but2,sen1,s1};
           controlsend T=new controlsend();
           T.execute(y);
       }
@@ -81,39 +87,46 @@ import android.widget.TextView;
       }
   	public void onSensorChanged(SensorEvent event)
   	{
+  		if(!controlsend.check)
+  		{
   	
-  		PrintWriter pr=controlsend.getter();
-  		float angle=Math.round(event.values[0]);
-  		RotateAnimation ra = new RotateAnimation(curangle,-angle,Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF,0.5f);
-  		ra.setDuration(210);
-  		ra.setFillAfter(true);
-  		compass.setAnimation(ra);
-  		curangle=-angle;
-  		if(angle==0)
-  		{
-  			Log.e("dir","front");
-  			//pr.println(PORT + " "  + "DATA" + " " + "Front");
-  			//pr.flush();
-  		}
-  		else if(angle>60 && angle <120)
-  		{
-  			Log.e("dir","rigjt");
-  			//pr.println(PORT + " "  + "DATA" + " " + "Right");
-  			//pr.flush();
-  		
-  		}
-  		else if(angle >150 && angle <210)
-  		{
-  			Log.e("dir","back");
-  			//pr.println(PORT + " "  + "DATA" + " " + "Back");
-  			//pr.flush();
-  			
-  		}
-  		else if(angle > 240 && angle <300)
-  		{
-  			Log.e("dir","left");
-  			//pr.println(PORT + " "  + "DATA" + " " + "Left");
-  			//pr.flush();
+  			PrintWriter pr=controlsend.getter();
+  			float angle=Math.round(event.values[0]);
+  			RotateAnimation ra = new RotateAnimation(curangle,-angle,Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+  			ra.setDuration(210);
+  			ra.setFillAfter(true);
+  			compass.setAnimation(ra);
+  			curangle=-angle;
+  			if(angle==0 && dir.compareTo("Front")!=0)
+  			{
+  				Log.e("dir","front");
+  				dir="Front";
+  				pr.println("Front");
+  				pr.flush();
+  			}
+  			else if(angle>60 && angle <120 && dir.compareTo("Right")!=0)
+  			{
+  				Log.e("dir","rigjt");
+  				dir="Right";
+  				pr.println("Right");
+  				pr.flush();
+  				
+  			}
+  			else if(angle >150 && angle <210 && dir.compareTo("Back")!=0)
+  			{
+  				Log.e("dir","back");
+  				dir="Back";
+  				pr.println("Back");
+  				pr.flush();
+  				
+  			}
+  			else if(angle > 240 && angle <300 && dir.compareTo("Left")!=0)
+  			{
+  				Log.e("dir","left");
+  				dir="Left";
+  				pr.println("Left");
+  				pr.flush();
+  			}
   		}
   		
   	}
@@ -147,13 +160,14 @@ import android.widget.TextView;
       return super.onOptionsItemSelected(item);
   }
 }
-class controlsend extends AsyncTask
+class controlsend extends AsyncTask implements OnClickListener
 {
     static Socket soc;	
     static BufferedReader br;
     static PrintWriter pr;
+    static boolean check=true;
     static String IP,PORT;
-    static Button exit;
+    static Button exit,auto,man,test;
 	ImageButton lights;
     static int x,y,z;
     SensorManager sen;
@@ -165,9 +179,17 @@ class controlsend extends AsyncTask
 	IP=IP.valueOf(params[0]);
 	PORT=PORT.valueOf(params[1]);
 	exit=(Button)params[2];
-	lights=(ImageButton)params[3];
-	sen=(SensorManager)params[4];
-	s=(Sensor)params[5];
+	auto=(Button)params[3];
+	man=(Button)params[4];
+	test=(Button)params[5];
+	lights=(ImageButton)params[6];
+	sen=(SensorManager)params[7];
+	s=(Sensor)params[8];
+	exit.setOnClickListener(this);
+	auto.setOnClickListener(this);
+	man.setOnClickListener(this);
+	test.setOnClickListener(this);
+	lights.setOnClickListener(this);
 	try
         {
 		Log.e(IP,PORT);
@@ -187,38 +209,55 @@ class controlsend extends AsyncTask
         {
         	e.printStackTrace();
         }
-        exit.setOnClickListener(new View.OnClickListener() 
-        {
-        	 
-            	public void onClick(View arg0) 
-            	{
-            		pr.println(IP+" LOGOUT");
-            		pr.flush();
-            		try {
-						soc.close();
-					
-					} catch (IOException e) {
-						
-						e.printStackTrace();
-					}
-            	}
-        });
-        lights.setOnClickListener(new View.OnClickListener()
-        {
-
-		public void onClick(View v) 
-		{
-			pr.println(PORT + " "  + "DATA" + " " + "start");
-			pr.flush();
-		}
-        	
-        });
-
+        
 		return null;
 	}
 	public static PrintWriter getter()
 	{
 		return pr;
+	}
+	public void onClick(View v) 
+	{
+		switch(v.getId())
+		{
+			case R.id.exit:
+			pr.println(27);
+        	pr.flush();
+        	try 
+        	{
+				soc.close();
+				
+			}
+        	catch (IOException e) 
+        	{
+				e.printStackTrace();
+			}
+        	break;
+        	
+			case R.id.auto:
+			check=true;
+			pr.println('a');
+			pr.flush();
+			break;
+			
+			case R.id.test:
+			check=true;
+			pr.println('t');
+			pr.flush();
+			break;
+			
+			case R.id.man:
+			check=false;
+			pr.println('m');
+			pr.flush();
+			break;
+			
+			case R.id.light:
+			pr.println('l');
+			pr.flush();
+			break;
+		}
+		
 	}
 
 }

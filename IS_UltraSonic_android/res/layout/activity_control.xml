@@ -26,6 +26,50 @@
             android:textColor="#ff000000"
             android:textSize="10dip"
             android:textStyle="normal" />
+    <Button
+            android:id="@+id/auto"
+            style="@style/cusbut"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:background="@drawable/cusbut"
+            android:clickable="true"
+            android:text="Auto"
+            android:layout_above="@+id/exit"
+            android:layout_marginBottom="25dip"
+            android:layout_marginLeft="25dip"
+            android:textColor="#ff000000"
+            android:textSize="10dip"
+            android:textStyle="normal" />
+      <Button
+            android:id="@+id/man"
+            style="@style/cusbut"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:background="@drawable/cusbut"
+            android:clickable="true"
+            android:text="Manual"
+            android:layout_above="@+id/exit"
+            android:layout_toRightOf="@+id/auto"
+            android:layout_marginBottom="25dip"
+            android:layout_marginLeft="25dip"
+            android:textColor="#ff000000"
+            android:textSize="10dip"
+            android:textStyle="normal" />
+        <Button
+            android:id="@+id/test"
+            style="@style/cusbut"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:background="@drawable/cusbut"
+            android:clickable="true"
+            android:text="Test"
+            android:layout_above="@+id/exit"
+            android:layout_toRightOf="@+id/man"
+            android:layout_marginBottom="25dip"
+            android:layout_marginLeft="25dip"
+            android:textColor="#ff000000"
+            android:textSize="10dip"
+            android:textStyle="normal" />
     <ImageButton 
         
         	android:id="@+id/light"
