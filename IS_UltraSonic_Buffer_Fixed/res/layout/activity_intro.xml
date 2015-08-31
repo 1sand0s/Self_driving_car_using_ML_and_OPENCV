@@ -1,0 +1,173 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".INTRO"
+    android:background="@drawable/dark"
+    android:id="@+id/Home">
+   <ScrollView 
+       android:id="@+id/scrollView7"
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentStart="true"
+       android:fadeScrollbars="true"
+       android:verticalScrollbarPosition="right" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.8"
+        android:background="@drawable/black" >
+		<TextView 
+		    android:id="@+id/header"
+		    android:textSize="30dip"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="WIPRO AID"
+		    android:textColor="#ffa9a9a9"
+		    android:layout_marginTop="10dip"
+		    />"
+        <Button
+            android:id="@+id/Product"
+            style="@style/cusbut"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_below="@+id/header"
+            android:background="@drawable/cusbut"
+            android:clickable="true"
+            android:text="PRODUCT"
+            android:layout_marginTop="10dip"
+            android:textColor="#ff000000"
+            android:textSize="10dip"
+            android:textStyle="normal" />
+
+        
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="200sp"
+            android:layout_height="25sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView8"
+            android:text="copyrights @ RPA"
+            android:textColor="#ffa9a9a9"
+            android:textSize="6sp" />
+
+       <Button
+           android:id="@+id/Query"
+           style="@style/cusbut"
+           android:layout_width="wrap_content"
+           android:layout_height="30dip"
+           android:layout_alignTop="@+id/Product"
+           android:layout_toRightOf="@+id/Product"
+           android:background="@drawable/cusbut"
+           android:clickable="true"
+           android:text="Query"
+           android:textColor="#ff000000"
+           android:textSize="10dip"
+           android:textStyle="normal" />
+       <Button
+           android:id="@+id/Manual"
+           style="@style/cusbut"
+           android:layout_width="wrap_content"
+           android:layout_height="30dip"
+           android:layout_alignTop="@+id/Product"
+           android:layout_toRightOf="@+id/Query"
+           android:background="@drawable/cusbut"
+           android:clickable="true"
+           android:text="Manual"
+           android:textColor="#ff000000"
+           android:textSize="10dip"
+           android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="100dip"
+            android:layout_height="40dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Product"
+            android:text="PROJECT"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffff"
+            android:textSize="15dip"
+            android:layout_marginTop="20dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView33"
+            android:text="This project is a model/proof of concept of a driverless car. Our system consists of a wheeled bot, a camera, and the iWave ULK board. In our system the wheeled bot represents the autonomous, driverless car whose CPU is the host PC and the iWave UTLP board. First, we use the camera to take a number of images of the path/road that the bot might traverse (training path). The images are converted to 20x20 black and white images and then to 20x20 bitmap matrices using OpenCV, and serve as the training set data for the machine learning algorithm. Then, these images are used to train the Machine Learning algorithm—Logistic Regression. Once the system has been trained, and the trained ML parameters are obtained, the system has the ability to detect the direction of a turn, for any new input image obtained from the camera. Next, for any input image of the road (test path) that the bot is currently travelling, the algorithm calculates a real number, which is a measure of its tendency to turn right, left, or go straight. It then picks the direction it must turn, by picking the direction associated with the highest real number calculated. Finally, the motors are actuated to allow the bot to turn as predicted. The above system has been developed to work for flat paths, having a black strip of about 2cm width on a white background. No obstacles are allowed to be present in front of the bot."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffffff"
+            android:textSize="10dip"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView34"
+            android:layout_marginTop="20dip"
+            android:text="AID "
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffffff"
+            android:textSize="20dip" />
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView35"
+            android:layout_marginTop="10dip"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffffff"
+            android:textSize="10dip" />
+        <ImageView 
+            android:id="@+id/is"
+            android:background="@drawable/car"
+            android:layout_below="@+id/textView36"
+            android:layout_height="220dip"
+            android:layout_width="match_parent"/>
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/is"
+            android:layout_marginTop="10dip"
+            android:text="For optimal results, the product has been designed to be used of flat white roads with a
+
+black strip representing the path to be followed. The path thickness needs lie between 1.5cm and 
+
+1.8 cm. The path is allowed to have a maximum inclination of 5 degree, and there cannot be a 
+
+change its inclination at any point. The lighting conditions need to be in the range of 10 lx to 640 
+
+lx. No obstructions or obstacles are to be allowed in the area of view of the camera.(Area of view 
+
+has been defined in the Release Manual under section 4.1). The product has been tested for use 
+
+only indoors, and may not fare well in outdoor gust, rain, or snow."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ffffffff"
+            android:textSize="10dip" />
+        
+    </RelativeLayout>
+
+     </ScrollView>
+
+</RelativeLayout>
